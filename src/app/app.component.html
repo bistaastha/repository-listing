@@ -1,0 +1,33 @@
+<div>
+  <div class="container" *ngIf="userData">
+    <user-details [name]="userData.name" [github]="userData.html_url" [imageUrl]="userData.avatar_url"
+      [location]="userData.location" [twitter]="userData.twitter_username" [bio]="userData.bio"></user-details>
+    <div *ngIf="isLoading">
+      <div class="ui active loader"></div>
+    </div>
+    <div *ngIf="!isLoading && data.length === 0">
+      No repositories found
+    </div>
+    <div class="ui two column grid repo-detail-container" *ngIf="!isLoading && data !== undefined">
+      <repository-details *ngFor="let element of data | paginate: {
+        itemsPerPage: 10,
+        currentPage: currentPage,
+        totalItems: totalRepositories}" [name]="element.name" [description]="element.description"
+        [languageUrl]="element.languagesUrl" 
+        [repositoryLink]="element.htmlUrl"
+        class="column"></repository-details>
+      <div class="pagination-div">
+        <pagination-controls class="pagination" (pageChange)="pageChanged($event)"></pagination-controls>
+        <div class="skip-buttons">
+        <button [disabled]="currentPage == 1" class="ui basic button blue small older" (click)="decrement(10)"><i class="angle double left icon"></i>Older
+        </button>
+        <button [disabled]="totalPages == currentPage"class="ui basic button blue small newer" (click)="increment(10)">Newer<i class="angle double right icon"></i>
+        </button>
+      </div>
+      </div>
+    </div>
+  </div>
+  <div class="container" *ngIf="userData === undefined">
+    <h1>No data received</h1>
+  </div>
+</div>

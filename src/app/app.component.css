@@ -1,0 +1,32 @@
+.card {
+  margin: 200px 20px 20px 20px;
+}
+
+.container {
+  margin-left: 10vw;
+  margin-right: 10vw;
+  box-shadow: 5px grey;
+  padding-bottom: 10vh;
+}
+
+a {
+  color: black;
+}
+
+.repo-detail-container {
+  display: flex;
+  direction: column;
+  justify-content: center;
+}
+.pagination-div {
+  padding-right: 6vw;
+}
+.skip-buttons {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.older {
+  margin-left: 3.5vw;
+}

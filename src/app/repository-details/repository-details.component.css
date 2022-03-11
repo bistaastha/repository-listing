@@ -1,0 +1,31 @@
+.label-container {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+language-label {
+  margin-bottom: 5px;
+}
+
+.name {
+  padding-left: 0;
+  margin-left: 0;
+}
+
+.description {
+  white-space: nowrap;
+  height: 5vh;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.ui.card {
+  padding: 1vw;
+  min-height: 15vh;
+  min-width: 35vw;
+  transition: box-shadow .3s;
+}
+
+.ui.card:hover {
+  box-shadow: 0 0 11px rgba(33,33,33,.2); 
+}

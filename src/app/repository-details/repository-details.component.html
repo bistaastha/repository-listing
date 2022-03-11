@@ -1,0 +1,9 @@
+<div (click)="redirect()">
+    <div class="ui card container basic button">
+        <h2 class="ui blue header name">{{name}}</h2>
+        <div class="description">{{description}}</div>
+        <div class="label-container">
+            <language-label *ngFor="let e of languageList | slice:0:5; let i=index" [language]="e"></language-label>
+        </div>
+    </div>
+</div>

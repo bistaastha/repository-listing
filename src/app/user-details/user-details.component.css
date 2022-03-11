@@ -1,0 +1,35 @@
+.container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+img {
+    box-shadow: 0 0 11px rgba(33,33,33,.2);
+    margin-bottom: 2vh;
+}
+
+.user-gh-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 50px;
+}
+
+.user-bio-container {
+    flex-grow: 5;
+    padding: 50px;
+}
+
+.user-gh-container .user-bio-container{
+    display: flex;
+    flex-direction: column;
+}
+
+a {
+    color: black;
+}
+
+.gh-link-container {
+    margin-top: 10vh;
+}

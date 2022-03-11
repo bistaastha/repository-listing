@@ -1,0 +1,17 @@
+<div class="container">
+    <div *ngIf="github" class="user-gh-container">
+        <img src="{{imageUrl}}" alt="Avatar" class="ui small circular image">
+        <span *ngIf="github" >
+            <i class="linkify icon"></i>
+            <a href="{{github}}" class="ui black gh-link-container" target="_blank">{{github}}</a>
+        </span>
+    </div>
+    <div class="user-bio-container">
+        <h1>{{name}}</h1>
+        <div>{{bio}}</div>
+        <div *ngIf="location"><i class="map marker alternate icon"></i>{{location}}</div>
+        <div *ngIf="twitter"> <i class="twitter icon"></i>
+            <a href="https://twitter.com/{{twitter}}" target="_blank">https://twitter.com/{{twitter}}</a>
+        </div>
+    </div>
+</div>
