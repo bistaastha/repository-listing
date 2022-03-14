@@ -7,7 +7,7 @@ import { Observable } from 'rxjs';
 export class GetUserRepositoryDetailsService {
   constructor(private http: HttpClient) {}
   getData(reposPerPage: Number, pageNumber: Number): Observable<any> {
-    const url = `https://api.github.com/users/andrew/repos?page=${pageNumber}&per_page=${reposPerPage}&sort=updated`;
+    const url = `https://api.github.com/users/andrew/repos?page=${pageNumber}&per_page=${reposPerPage}&sort=created&direction=asc`;
     const result = this.http.get<any>(url);
     return result;
   }

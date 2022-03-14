@@ -4,27 +4,33 @@ import { GetUserRepositoryDetailsService } from '../services/get-user-repository
 @Component({
   selector: 'repository-details',
   templateUrl: './repository-details.component.html',
-  styleUrls: ['./repository-details.component.css']
+  styleUrls: ['./repository-details.component.css'],
 })
 export class RepositoryDetailsComponent implements OnInit {
-  @Input() name: string = ""
-  @Input() description: string = ""
-  @Input() languageUrl: string = ""
-  @Input() repositoryLink: string = ""
-  languageList: string[] = []
-  constructor(private getUserRepositoryDetails: GetUserRepositoryDetailsService) {  }
+  @Input() name: string = '';
+  @Input() description: string = '';
+  @Input() languageUrl: string = '';
+  @Input() repositoryLink: string = '';
+  languageList: string[] = [];
+  languageListInit: boolean = false;
+  constructor(
+    private getUserRepositoryDetails: GetUserRepositoryDetailsService
+  ) {}
 
   ngOnInit() {
-    this.getLanguageDetails()
+    this.getLanguageDetails();
   }
 
   redirect = () => {
-    window.open(this.repositoryLink, "_blank")
-  }
+    window.open(this.repositoryLink, '_blank');
+  };
 
   getLanguageDetails = () => {
-    this.getUserRepositoryDetails.getLanguageData(this.languageUrl).subscribe((data) => {
-      this.languageList = Object.keys(data)
-    })
-  }
+    this.getUserRepositoryDetails
+      .getLanguageData(this.languageUrl)
+      .subscribe((data) => {
+        this.languageList = Object.keys(data);
+        this.languageListInit = true;
+      });
+  };
 }

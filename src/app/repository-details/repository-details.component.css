@@ -14,7 +14,7 @@ language-label {
 
 .description {
   white-space: nowrap;
-  height: 5vh;
+  height: 3vh;
   overflow: hidden;
   text-overflow: ellipsis;
 }
@@ -23,9 +23,17 @@ language-label {
   padding: 1vw;
   min-height: 15vh;
   min-width: 35vw;
-  transition: box-shadow .3s;
+  box-shadow: rgba(36, 160, 237, 0.08) 0px 4px 12px;
+  transform: box-shadow .3s;
 }
 
 .ui.card:hover {
-  box-shadow: 0 0 11px rgba(33,33,33,.2); 
+  box-shadow: rgba(36, 160, 237, 0.15) 0px 3px 3px 0px;  /* box-shadow: rgba(36, 160, 237, 0.4) 5px 5px, rgba(36, 160, 237, 0.3) 10px 10px,
+    rgba(36, 160, 237, 0.05) 25px 25px; */
+    transform: box-shadow .3s;
+    transition-delay: .1s;
+}
+
+.ui.extra.content {
+  padding-left: 0px;
 }

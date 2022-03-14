@@ -1,9 +1,11 @@
 <div (click)="redirect()">
-    <div class="ui card container basic button">
+    <div class="ui card container link">
         <h2 class="ui blue header name">{{name}}</h2>
-        <div class="description">{{description}}</div>
-        <div class="label-container">
+        <div *ngIf="description" class="description">{{description}}</div>
+        <div *ngIf="!description" class="ui description grey"><i>No description found</i></div>
+        <div class="ui label-container extra content">
             <language-label *ngFor="let e of languageList | slice:0:5; let i=index" [language]="e"></language-label>
+            <div class="ui content description italic grey" *ngIf="languageList.length === 0 && languageListInit"><i>No languages found</i></div>
         </div>
     </div>
 </div>

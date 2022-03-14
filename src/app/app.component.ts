@@ -12,7 +12,7 @@ export class AppComponent {
   totalPages: number;
   currentPage: number = 1;
   userData: any;
-  isLoading: boolean = true;
+  isLoading: boolean = false;
   constructor(
     private getUserRepositoryDetails: GetUserRepositoryDetailsService
   ) {
@@ -27,9 +27,6 @@ export class AppComponent {
   ngOnChanges() {
     this.isLoading = false;
   }
-  // ngAfterContentInit() {
-  //   this.isLoading = false;
-  // }
   increment = (num: number) => {
     const currentNum = this.currentPage + num;
     this.currentPage =
@@ -42,12 +39,11 @@ export class AppComponent {
     const currentNum = this.currentPage - num;
     this.currentPage = currentNum < 1 ? 1 : (this.currentPage = currentNum);
   };
-
   pageChanged = (event: any) => {
     this.currentPage = event;
   };
   getRepoDetails = (pageNumber: number = 1) => {
-    let reposPerPage = 100;
+    let reposPerPage = 1000;
     this.isLoading = true;
     this.getUserRepositoryDetails
       .getData(reposPerPage, pageNumber)
@@ -71,8 +67,6 @@ export class AppComponent {
     console.log(this.data);
     this.totalRepositories = this.data.length;
     this.totalPages = Math.ceil(this.totalRepositories / 10);
-    this.data = [...this.data].reverse();
-    // console.log(this.data);
   };
   getUserDetails = () => {
     this.getUserRepositoryDetails.getUserData().subscribe((data) => {
