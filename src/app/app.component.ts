@@ -12,7 +12,7 @@ export class AppComponent {
   totalPages: number;
   currentPage: number = 1;
   userData: any;
-  isLoading: boolean = false;
+  isLoading: boolean = true;
   constructor(
     private getUserRepositoryDetails: GetUserRepositoryDetailsService
   ) {
@@ -65,6 +65,7 @@ export class AppComponent {
         }
       });
     console.log(this.data);
+    this.isLoading = false;
     this.totalRepositories = this.data.length;
     this.totalPages = Math.ceil(this.totalRepositories / 10);
   };
