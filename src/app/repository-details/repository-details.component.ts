@@ -19,6 +19,7 @@ export class RepositoryDetailsComponent implements OnInit {
 
   ngOnInit() {
     this.getLanguageDetails();
+    this.languageListInit = true;
   }
 
   redirect = () => {
