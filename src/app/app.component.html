@@ -5,9 +5,6 @@
     <div *ngIf="isLoading">
       <div class="ui active loader"></div>
     </div>
-    <div *ngIf="!isLoading && data.length === 0">
-      No repositories found
-    </div>
     <div class="ui two column grid repo-detail-container" *ngIf="!isLoading && data !== undefined">
       <repository-details *ngFor="let element of data | paginate: {
         itemsPerPage: 10,

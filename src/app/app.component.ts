@@ -65,7 +65,6 @@ export class AppComponent {
         }
       });
     console.log(this.data);
-    this.isLoading = false;
     this.totalRepositories = this.data.length;
     this.totalPages = Math.ceil(this.totalRepositories / 10);
   };
