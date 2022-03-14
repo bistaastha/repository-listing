@@ -32,3 +32,9 @@ App runs at: http://localhost:4200/
 - For the current instance of the app, the data corresponding to [this](https://github.com/andrew) GitHub user is being displayed. This profile has 306 public repositories.
 - For each card representing a repository, the maximum languages that can be displayed have been set to 5.
 - The GitHub API calls are unauthenticated.
+
+## UI Preview
+
+![image](https://user-images.githubusercontent.com/40273492/158204654-280f26b7-9ddf-4f80-a488-9a6d6b8cac25.png)
+
+
